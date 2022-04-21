@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Moonhub Admin | Jobs</title>
+</head>
+<body>
+
+    <div class="menu-btn">
+        <img src="../assets/icons/menu.png" alt="">
+    </div>
+    
+    <div class="sidebar">
+
+        <a href="index.html" class="logo-container">
+            <img class="sidebar-logo" src="../images/logo.png" alt="">
+        </a>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="jobs.html">Jobs</a></li>
+            <li><a href="emails.html">Emails</a></li>
+            <li><a href="companies.html">Companies</a></li>
+            <li><a href="stanford.html">Stanford</a></li>
+            <li><a href="users.html">Users</a></li>
+        </ul>
+
+    </div>
+
+    <div class="table">
+
+        <h1 class="table-title">Jobs</h1>
+
+        <div class="add-job">
+            <button class="add-btn"> Add Job<img src="../assets/icons/plus.png" alt=""></button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr class="t-head">
+                        <th>Company</th>
+                        <th>Link</th>
+                        <th>Title</th>
+                        <th>Role</th>
+                        <th>Location</th>
+                        <th>Remote</th>
+                        <th>Company Stage</th>
+                        <th>Sector</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    <div class="popup edit-job-popup">
+        <div class="popup-overlay"></div>
+        <form class="popup-form edit-job-form">
+            <div class="progress"><div class="progress-bar"></div></div>
+            <div class="form-picture">
+                <button type="button" class="picture-btn">Choose a Picture</button>
+                <div class="picture-img">
+                    <img id="add-picture" src="" alt="">
+                </div>
+            </div>
+            <div class="input">
+                <label>Company</label>
+                <input id="edit-company" type="text">
+            </div>
+            <div class="input">
+                <label>Tag</label>
+                <input id="edit-tag" type="text">
+            </div>
+            <div class="input">
+                <label>Link</label>
+                <input id="edit-link" type="text">
+            </div>
+            <div class="input">
+                <label>Title</label>
+                <input id="edit-title" type="text">
+            </div>
+            <div class="input">
+                <label>Role</label>
+                <div class="form-dropdown edit-role">
+                    <h5 data-filter="Software-Engineer">Software Engineer</h5>
+                    <ul>
+                        <li data-filter="Software-Engineer">Software Engineer</li>
+                        <li data-filter="Frontend-Engineer">Frontend Engineer</li>
+                        <li data-filter="Full-Stack-Engineer">Full-Stack Engineer</li>
+                        <li data-filter="Blockchain-Engineer">Blockchain Engineer</li>
+                        <li data-filter="Backend-Engineer">Backend Engineer</li>
+                        <li data-filter="Infrastructure-Engineer">Infrastructure Engineer</li>
+                        <li data-filter="Machine-Learning-Engineer">Machine Learning Engineer</li>
+                        <li data-filter="Security-Engineer">Security Engineer</li>
+                        <li data-filter="Data">Data</li>
+                        <li data-filter="Product-Designer">Product Designer</li>
+                        <li data-filter="Research">Research</li>
+                        <li data-filter="Growth">Growth</li>
+                        <li data-filter="Sales">Sales</li>
+                        <li data-filter="Marketing">Marketing</li>
+                        <li data-filter="Chief-of-Staff">Chief of Staff</li>
+                        <li data-filter="Product-Manager">Product Manager</li>
+                        <li data-filter="BizDev-Ops">BizDev / Ops</li>
+                        <li data-filter="Finance">Finance</li>
+                        <li data-filter="Intern">Intern</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input">
+                <label>Location</label>
+                <div class="form-dropdown edit-location">
+                    <h5 data-filter="SF-Bay-Area">SF Bay Area</h5>
+                    <ul>
+                        <li data-filter="SF-Bay-Area">SF Bay Area</li>
+                        <li data-filter="NYC">NYC</li>
+                        <li data-filter="Miami">Miami</li>
+                        <li data-filter="LA-Area">LA Area</li>
+                        <li data-filter="Singapore">Singapore</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input">
+                <label>Remote</label>
+                <div class="choices">
+                    <div class="edit-choice yes">
+                        <div class="checkbox"><div class="checkbox-center active"></div></div>
+                        Yes
+                    </div>
+                    <div class="edit-choice no">
+                        <div class="checkbox"><div class="checkbox-center"></div></div>
+                        No
+                    </div>
+                </div>
+            </div>
+            <div class="input">
+                <label>Featured</label>
+                <div class="choices">
+                    <div class="edit-choice f-yes">
+                        <div class="checkbox"><div class="checkbox-center active"></div></div>
+                        <span>Yes</span>
+                    </div>
+                    <div class="edit-choice f-no">
+                        <div class="checkbox"><div class="checkbox-center"></div></div>
+                        <span>No</span>
+                    </div>
+                </div>
+            </div>
+            <div class="input">
+                <label>Company Stage</label>
+                <div class="form-dropdown edit-stage">
+                    <h5 data-filter="Seed">Seed</h5>
+                    <ul>
+                        <li data-filter="Seed">Seed</li>
+                        <li data-filter="Series-A">Series A</li>
+                        <li data-filter="Series-B">Series B</li>
+                        <li data-filter="Series-C">Series C</li>
+                        <li data-filter="Series-D">Series D+</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input">
+                <label>Sector</label>
+                <div class="form-dropdown edit-sector">
+                    <h5 data-filter="web3">Web3</h5>
+                    <ul>
+                        <li data-filter="Web3">Web3</li>
+                        <li data-filter="Fintech">Fintech</li>
+                        <li data-filter="AI-ML">AI/ML</li>
+                        <li data-filter="Consumer">Consumer</li>
+                        <li data-filter="SaaS">SaaS</li>
+                        <li data-filter="Hardware">Hardware</li>
+                        <li data-filter="Healthcare">Healthcare</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input" style="width: 100%;">
+                <label>Description</label>
+                <textarea id="edit-description"></textarea>
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+    
+    
+    <div class="popup add-job-popup">
+        <div class="popup-overlay"></div>
+        <form class="popup-form add-job-form">
+            <div class="progress"><div class="progress-bar"></div></div>
+            <div class="form-picture">
+                <button type="button" class="picture-btn">Choose a Picture</button>
+                <div class="picture-img">
+                    <img id="add-picture" src="" alt="">
+                </div>
+            </div>
+            <div class="input">
+                <label>Company</label>
+                <input id="add-company" type="text">
+            </div>
+            <div class="input">
+                <label>Tag</label>
+                <input id="add-tag" type="text">
+            </div>
+            <div class="input">
+                <label>Link</label>
+                <input id="add-link" type="text">
+            </div>
+            <div class="input">
+                <label>Title</label>
+                <input id="add-title" type="text">
+            </div>
+            <div class="input">
+                <label>Role</label>
+                <div class="form-dropdown role">
+                    <h5 data-filter="Software-Engineer">Software Engineer</h5>
+                    <ul>
+                        <li data-filter="Software-Engineer">Software Engineer</li>
+                        <li data-filter="Frontend-Engineer">Frontend Engineer</li>
+                        <li data-filter="Full-Stack-Engineer">Full-Stack Engineer</li>
+                        <li data-filter="Blockchain-Engineer">Blockchain Engineer</li>
+                        <li data-filter="Backend-Engineer">Backend Engineer</li>
+                        <li data-filter="Infrastructure-Engineer">Infrastructure Engineer</li>
+                        <li data-filter="Machine-Learning-Engineer">Machine Learning Engineer</li>
+                        <li data-filter="Security-Engineer">Security Engineer</li>
+                        <li data-filter="Data">Data</li>
+                        <li data-filter="Product-Designer">Product Designer</li>
+                        <li data-filter="Research">Research</li>
+                        <li data-filter="Growth">Growth</li>
+                        <li data-filter="Sales">Sales</li>
+                        <li data-filter="Marketing">Marketing</li>
+                        <li data-filter="Chief-of-Staff">Chief of Staff</li>
+                        <li data-filter="Product-Manager">Product Manager</li>
+                        <li data-filter="BizDev-Ops">BizDev / Ops</li>
+                        <li data-filter="Finance">Finance</li>
+                        <li data-filter="Intern">Intern</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input">
+                <label>Location</label>
+                <div class="form-dropdown location">
+                    <h5 data-filter="SF-Bay-Area">SF Bay Area</h5>
+                    <ul>
+                        <li data-filter="SF-Bay-Area">SF Bay Area</li>
+                        <li data-filter="NYC">NYC</li>
+                        <li data-filter="Miami">Miami</li>
+                        <li data-filter="LA-Area">LA Area</li>
+                        <li data-filter="Singapore">Singapore</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input">
+                <label>Remote</label>
+                <div class="choices">
+                    <div class="add-choice yes">
+                        <div class="checkbox"><div class="checkbox-center active"></div></div>
+                        <span>Yes</span>
+                    </div>
+                    <div class="add-choice no">
+                        <div class="checkbox"><div class="checkbox-center"></div></div>
+                        <span>No</span>
+                    </div>
+                </div>
+            </div>
+            <div class="input">
+                <label>Featured</label>
+                <div class="choices">
+                    <div class="add-choice f-yes">
+                        <div class="checkbox"><div class="checkbox-center active"></div></div>
+                        <span>Yes</span>
+                    </div>
+                    <div class="add-choice f-no">
+                        <div class="checkbox"><div class="checkbox-center"></div></div>
+                        <span>No</span>
+                    </div>
+                </div>
+            </div>
+            <div class="input">
+                <label>Company Stage</label>
+                <div class="form-dropdown stage">
+                    <h5 data-filter="Seed">Seed</h5>
+                    <ul>
+                        <li data-filter="Seed">Seed</li>
+                        <li data-filter="Series-A">Series A</li>
+                        <li data-filter="Series-B">Series B</li>
+                        <li data-filter="Series-C">Series C</li>
+                        <li data-filter="Series-D">Series D+</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input">
+                <label>Sector</label>
+                <div class="form-dropdown sector">
+                    <h5 data-filter="web3">Web3</h5>
+                    <ul>
+                        <li data-filter="Web3">Web3</li>
+                        <li data-filter="Fintech">Fintech</li>
+                        <li data-filter="AI-ML">AI/ML</li>
+                        <li data-filter="Consumer">Consumer</li>
+                        <li data-filter="SaaS">SaaS</li>
+                        <li data-filter="Hardware">Hardware</li>
+                        <li data-filter="Healthcare">Healthcare</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input" style="width: 100%;">
+                <label>Description</label>
+                <textarea id="add-description"></textarea>
+            </div>
+            <button type="submit">Add Job</button>
+        </form>
+    </div>
+    
+    <input type="file" class="picture-input" hidden>
+
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+        import { getDatabase, push, ref, set, onChildAdded, child, remove } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBexLtfFSG_UyYcGpowKXGX3IjQTDYy1xM",
+          authDomain: "moonhub-8040e.firebaseapp.com",
+          projectId: "moonhub-8040e",
+          storageBucket: "moonhub-8040e.appspot.com",
+          messagingSenderId: "1093017471320",
+          appId: "1:1093017471320:web:6d50c0e710cbbedfa5bd2d",
+          measurementId: "G-E6FR4KEJKZ"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const database = getDatabase();
+
+
+        ////////////////////////////////////////////////
+        ////////////////// Checkboxes //////////////////
+        ////////////////////////////////////////////////
+
+        var addRemote = 'Yes'
+        $('.add-choice.no .checkbox').click(function() {
+            addRemote = 'No'
+        })
+        $('.add-choice.yes .checkbox').click(function() {
+            addRemote = 'Yes'
+        })
+
+        var addFeature = 'Yes'
+        $('.add-choice.f-no .checkbox').click(function() {
+            addFeature = 'No'
+        })
+        $('.add-choice.f-yes .checkbox').click(function() {
+            addFeature = 'Yes'
+        })
+
+
+        /////////////////////////////////////////////////////////
+        ////////////////////// Add a Job ////////////////////////
+        /////////////////////////////////////////////////////////
+
+        $('.add-job-form').submit(function(e) {
+            e.preventDefault()
+
+            var company = $('#add-company').val()
+            var link = $('#add-link').val()
+            var title = $('#add-title').val()
+            var tag = $('#add-tag').val()
+            var role = $('.role h5').text()
+            var roleFilter = $('.role h5').attr('data-filter')
+            var location = $('.location h5').text()
+            var locationFilter = $('.location h5').attr('data-filter')
+            var stage = $('.stage h5').text()
+            var stageFilter = $('.stage h5').attr('data-filter')
+            var sector = $('.sector h5').text()
+            var sectorFilter = $('.sector h5').attr('data-filter')
+            var description = $('#add-description').val().replace(/\n/gm, ' <br> ')
+            var image = $('.picture-img img').attr('src')
+
+            set(push(ref(database, 'jobs')), {
+                company: company,
+                link: link,
+                title: title,
+                tag: tag,
+                role: role,
+                roleFilter: roleFilter,
+                location: location,
+                locationFilter: locationFilter,
+                remote: addRemote,
+                featured: addFeature,
+                stage: stage,
+                stageFilter: stageFilter,
+                sector: sector,
+                sectorFilter: sectorFilter,
+                image: image,
+                description: description,
+            })
+
+            $('.popup').fadeOut()
+        })
+
+
+        //////////////////////////////////////////////////////
+        //////////////////// Display Jobs ////////////////////
+        //////////////////////////////////////////////////////
+
+        onChildAdded(ref(database, 'jobs'), (snapshot) => {
+            $('table tbody').prepend(`
+                <tr data-key="${snapshot.key}" data-featured="${snapshot.val().featured}">
+                    <td id="image" hidden>${snapshot.val().image}</td>
+                    <td id="tag" hidden>${snapshot.val().tag}</td>
+                    <td id="company">${snapshot.val().company}</td>
+                    <td id="link"><a href="${snapshot.val().link}">${snapshot.val().link}</a></td>
+                    <td id="title">${snapshot.val().title}</td>
+                    <td data-filter="${snapshot.val().roleFilter}" id="role">${snapshot.val().role}</td>
+                    <td data-filter="${snapshot.val().locationFilter}" id="location">${snapshot.val().location}</td>
+                    <td id="remote">${snapshot.val().remote}</td>
+                    <td data-filter="${snapshot.val().stageFilter}" id="stage">${snapshot.val().stage}</td>
+                    <td data-filter="${snapshot.val().sectorFilter}" id="sector">${snapshot.val().sector}</td>
+                    <td id="description" hidden>${snapshot.val().description}</td>
+                    <td class="actions">
+                        <img class="edit-btn" src="../assets/icons/edit.png" alt="">
+                        <img class="delete-btn" src="../assets/icons/delete.png" alt="">
+                    </td>
+                </tr>
+            `)
+        })
+        
+
+
+        ///////////////////////////////////////////////////////
+        ////////////////////// Edit a job /////////////////////
+        ///////////////////////////////////////////////////////
+
+        var key;
+
+        var editRemote = 'Yes';
+        var editFeature = 'Yes';
+
+        $(document).on('click', '.edit-btn', function() {
+            key = $(this).parents('tr').attr('data-key')
+            editFeature = $(this).parents('tr').attr('data-featured')
+            editRemote = $(this).parents('tr').find('#remote').text()
+            $('.edit-role h5').text($(this).parents('tr').find('#role').text()).attr('data-filter', $(this).parents('tr').find('#role').attr('data-filter'))
+            $('.edit-location h5').text($(this).parents('tr').find('#location').text()).attr('data-filter', $(this).parents('tr').find('#location').attr('data-filter'))
+            $('.edit-stage h5').text($(this).parents('tr').find('#stage').text()).attr('data-filter', $(this).parents('tr').find('#stage').attr('data-filter'))
+            $('.edit-sector h5').text($(this).parents('tr').find('#sector').text()).attr('data-filter', $(this).parents('tr').find('#sector').attr('data-filter'))
+            $('#edit-company').val($(this).parents('tr').find('#company').text())
+            $('#edit-link').val($(this).parents('tr').find('#link').text())
+            $('#edit-title').val($(this).parents('tr').find('#title').text())
+            $('#edit-tag').val($(this).parents('tr').find('#tag').text())
+            $('#edit-description').val($(this).parents('tr').find('#description').html().replace(/<br>/g, '\n'))
+            $('.edit-job-form .picture-img img').attr('src', $(this).parents('tr').find('#image').text())
+            $('.edit-job-popup').fadeIn()
+
+            $('.edit-choice .checkbox-center').removeClass('active')
+
+            $(`.edit-choice.f-${editFeature.toLowerCase()} .checkbox-center`).addClass('active')
+            $(`.edit-choice.${editRemote.toLowerCase()} .checkbox-center`).addClass('active')
+        })
+
+
+        $('.edit-choice.no .checkbox').click(function() {
+            editRemote = 'No'
+        })
+        $('.edit-choice.yes .checkbox').click(function() {
+            editRemote = 'Yes'
+        })
+        
+        $('.edit-choice.f-no .checkbox').click(function() {
+            editFeature = 'No'
+        })
+        $('.edit-choice.f-yes .checkbox').click(function() {
+            editFeature = 'Yes'
+        })
+
+        $('.edit-job-form').submit(function(e) {
+            e.preventDefault()
+
+            var company = $('#edit-company').val()
+            var link = $('#edit-link').val()
+            var title = $('#edit-title').val()
+            var tag = $('#edit-tag').val()
+            var role = $('.edit-role h5').text()
+            var roleFilter = $('.edit-role h5').attr('data-filter')
+            var jLocation = $('.edit-location h5').text()
+            var locationFilter = $('.edit-location h5').attr('data-filter')
+            var stage = $('.edit-stage h5').text()
+            var stageFilter = $('.edit-stage h5').attr('data-filter')
+            var sector = $('.edit-sector h5').text()
+            var sectorFilter = $('.edit-sector h5').attr('data-filter')
+            var description = $('#edit-description').val().replace(/\n/gm, ' <br> ')
+            var image = $('.edit-job-form .picture-img img').attr('src')
+
+            set(child(ref(database, 'jobs'), key), {
+                company: company,
+                link: link,
+                title: title,
+                tag: tag,
+                role: role,
+                roleFilter: roleFilter,
+                location: jLocation,
+                locationFilter: locationFilter,
+                remote: editRemote,
+                featured: editFeature,
+                stage: stage,
+                stageFilter: stageFilter,
+                sector: sector,
+                sectorFilter: sectorFilter,
+                image: image,
+                description: description
+            })
+
+            $('.edit-job-popup').fadeOut()
+        })
+
+        ///////////////////////////////////////////////////////
+        //////////////////// Delete a Job /////////////////////
+        ///////////////////////////////////////////////////////
+        
+        $(document).on('click', '.delete-btn', function() {
+            key = $(this).parents('tr').attr('data-key')
+
+            remove(child(ref(database, 'jobs'), key))
+            $(this).parents('tr').fadeOut()
+        })
+
+
+        //////////////////////////////////////////////////////////////////
+        /////////////////////// Uplaod Job Picture ///////////////////////
+        //////////////////////////////////////////////////////////////////
+
+        $('.picture-btn').click(function() {
+            $('.picture-input').click()
+        })
+
+        firebase.initializeApp(firebaseConfig);
+
+        $('.picture-input').change(function(e) {
+            var file = e.target.files[0]
+            const storageRef = firebase.storage().ref(file.name);
+            const task = storageRef.put(file);
+
+            task.on('state_changed', 
+                function progress(snapshot) {
+                    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    $('.progress-bar').css('width', `${percentage}%`)
+                },
+                function error(err) {
+                        
+                },
+                function complete() {
+                    storageRef.getDownloadURL().then((url) => {
+                        $('.picture-img img').attr('src', url)
+                        $('.form-picture').addClass('active')
+                        $('.picture-img').show(500)
+                    })
+                }
+                
+            );
+        })
+    
+
+
+
+    </script>
+
+</body>
+</html>

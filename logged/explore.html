@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("Yr7bjEWQskDUBCsEc");
+        })();
+    </script>
+
+    <title>Moonhub | Explore Jobs</title>
+</head>
+<body>
+    
+    <nav class="explore-nav active">
+        <div class="nav-left">
+            <a href="index.html"><img src="images/logo.png" alt=""></a>
+            <form class="search-container">
+                <input type="text" class="search-input" placeholder="e.g. Frontend Software Engineer">
+                <button type="submit" class="search-btn"><img src="assets/icons/search.png" alt=""></button>
+            </form>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a class="active" href="explore.html">Discover</a></li>
+                <li class="blue-navlink"><a href="index.html">Matches</a></li>
+                <li class="menu-btn"><img src="assets/icons/menu.png" alt=""></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="explore-mobile-menu active">
+        <ul>
+            <li>
+                <form class="search-container">
+                    <input type="text" class="search-input">
+                    <button type="submit" class="search-btn"><img src="assets/icons/search.png" alt=""></button>
+                </form>
+            </li>
+            <li><a href="explore.html">Discover</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li class="blue-navlink"><a href="index.html">Matches</a></li>
+        </ul>
+    </div>
+
+    <div class="filters">
+        <ul class="filters-list">
+            <li class="filter">
+                <h4>Role <img src="assets/icons/down.png" alt=""></h4>
+                <ul class="cat-filters role-filters">
+                    <li><a data-filter="Software-Engineer" href="#"><img src="assets/icons/check.png" alt=""> Software Engineer</a></li>
+                    <li><a data-filter="Frontend-Engineer" href="#"><img src="assets/icons/check.png" alt="">Frontend Engineer</a></li>
+                    <li><a data-filter="Full-Stack-Engineer" href="#"><img src="assets/icons/check.png" alt="">Full-Stack Engineer</a></li>
+                    <li><a data-filter="Blockchain-Engineer" href="#"><img src="assets/icons/check.png" alt="">Blockchain Engineer</a></li>
+                    <li><a data-filter="Backend-Engineer" href="#"><img src="assets/icons/check.png" alt="">Backend Engineer</a></li>
+                    <li><a data-filter="Infrastructure-Engineer" href="#"><img src="assets/icons/check.png" alt="">Infrastructure Engineer</a></li>
+                    <li><a data-filter="Machine-Learning-Engineer" href="#"><img src="assets/icons/check.png" alt="">Machine Learning Engineer</a></li>
+                    <li><a data-filter="Security-Engineer" href="#"><img src="assets/icons/check.png" alt="">Security Engineer</a></li>
+                    <li><a data-filter="Data" href="#"><img src="assets/icons/check.png" alt="">Data</a></li>
+                    <li><a data-filter="Product-Designer" href="#"><img src="assets/icons/check.png" alt="">Designer</a></li>
+                    <li><a data-filter="Research" href="#"><img src="assets/icons/check.png" alt="">Research</a></li>
+                    <li><a data-filter="Growth" href="#"><img src="assets/icons/check.png" alt="">Growth</a></li>
+                    <li><a data-filter="Sales" href="#"><img src="assets/icons/check.png" alt="">Sales</a></li>
+                    <li><a data-filter="Marketing" href="#"><img src="assets/icons/check.png" alt="">Marketing</a></li>
+                    <li><a data-filter="Chief-of-Staff" href="#"><img src="assets/icons/check.png" alt="">Chief of Staff</a></li>
+                    <li><a data-filter="Product-Manager" href="#"><img src="assets/icons/check.png" alt="">Product Manager</a></li>
+                    <li><a data-filter="BizDev-Ops" href="#"><img src="assets/icons/check.png" alt="">BizDev / Ops</a></li>
+                    <li><a data-filter="Finance" href="#"><img src="assets/icons/check.png" alt="">Finance</a></li>
+                    <li><a data-filter="Intern" href="#"><img src="assets/icons/check.png" alt="">Intern</a></li>
+                </ul>
+            </li>
+            <li class="filter">
+                <h4>Company Stage <img src="assets/icons/down.png" alt=""></h4>
+                <ul class="cat-filters stage-filters">
+                    <li><a data-filter="Seed" href="#"><img src="assets/icons/check.png" alt="">Seed</a></li>
+                    <li><a data-filter="Series-A" href="#"><img src="assets/icons/check.png" alt="">Series A</a></li>
+                    <li><a data-filter="Series-B" href="#"><img src="assets/icons/check.png" alt="">Series B</a></li>
+                    <li><a data-filter="Series-C" href="#"><img src="assets/icons/check.png" alt="">Series C</a></li>
+                    <li><a data-filter="Series-D" href="#"><img src="assets/icons/check.png" alt="">Series D+</a></li>
+                </ul>
+            </li>
+            <li class="filter">
+                <h4>Sector <img src="assets/icons/down.png" alt=""></h4>
+                <ul class="cat-filters sector-filters">
+                    <li><a data-filter="Web3" href="#"><img src="assets/icons/check.png" alt="">Web3</a></li>
+                    <li><a data-filter="Fintech" href="#"><img src="assets/icons/check.png" alt="">Fintech</a></li>
+                    <li><a data-filter="AI-ML" href="#"><img src="assets/icons/check.png" alt="">AI/ML</a></li>
+                    <li><a data-filter="Consumer" href="#"><img src="assets/icons/check.png" alt="">Consumer</a></li>
+                    <li><a data-filter="SaaS" href="#"><img src="assets/icons/check.png" alt="">SaaS</a></li>
+                    <li><a data-filter="Hardware" href="#"><img src="assets/icons/check.png" alt="">Hardware</a></li>
+                    <li><a data-filter="Healthcare" href="#"><img src="assets/icons/check.png" alt="">Healthcare</a></li>
+                </ul>
+            </li>
+            <li class="filter">
+                <h4>Location <img src="assets/icons/down.png" alt=""></h4>
+                <ul class="cat-filters location-filters">
+                    <li><a data-filter="SF-Bay-Area" href="#"><img src="assets/icons/check.png" alt="">SF Bay Area</a></li>
+                    <li><a data-filter="NYC" href="#"><img src="assets/icons/check.png" alt="">NYC</a></li>
+                    <li><a data-filter="Miami" href="#"><img src="assets/icons/check.png" alt="">Miami</a></li>
+                    <li><a data-filter="LA-Area" href="#"><img src="assets/icons/check.png" alt="">LA Area</a></li>
+                    <li><a data-filter="Singapore" href="#"><img src="assets/icons/check.png" alt="">Singapore</a></li>
+                </ul>
+            </li>
+            <li class="filter-switch">
+                <h4>Remote</h4>
+                <input type="checkbox" hidden="hidden" id="username">
+                <label data-remote="no" class="switch" for="username"></label>
+            </li>
+        </ul>
+    </div>
+
+    
+    <section class="jobs-container" style="margin-top: 114px;">
+        
+        <div class="jobs-left">
+            
+            <h2 class="jobs-title">Get Warm Introductions to High-Growth Startups</h2>
+            <h5 class="jobs-subtitle">* Only selected opportunities listed here. Talk to an agent to learn more about other startups.</h5>
+
+            <div class="jobs-items">
+                
+            </div>
+
+        </div>
+
+        <div class="jobs-right">
+
+            <h2 class="trending-title">Trending</h2>
+            <h3 class="section-subtitle">View opportunities popular within the Moonhub community. </h3>
+
+            <div class="trending-container">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <div class="footer-left">
+            <h2>Company</h2>
+            <ul>
+                <li><a class="talk" href="#">Talk to an Expert</a></li>
+                <li><a href="explore.html">Jobs</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="contact-btn" href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <h2>Stay up to date with movements in Moonhub</h2>
+            <form class="popup-input" id="subscribeForm">
+                <input type="text" placeholder="Your Email" required>
+                <button type="submit">Join Mailing List</button>
+            </form>
+            <h3 class="subscribe-message">Your Email has been Added!</h3>
+        </div>
+
+    </footer>
+
+
+    <div class="popup-contact">
+        <div class="popup-overlay"></div>
+        <div class="popup-container">
+            <h2>Contact the Moonhub Team</h2>
+            <form class="contact-form" id="contactForm">
+                <input id="contactName" type="text" placeholder="Full Name">
+                <input id="contactEmail" type="email" placeholder="Email">
+                <textarea id="contactMessage" placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+                <h3 id="contactMsg">Message Sent.</h3>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup">
+        <div class="popup-overlay"></div>
+        <div class="popup-container">
+            <h2><strong>Invite </strong> Code</h2>
+            <p>
+                Use your invite code to get matched to start-ups. <strong> Don’t have a code but want to join Moonhub & meet top startups? </strong> Email <strong class="c-blk"> hello@moonhub.xyz </strong> with your resume or LI to get a referral! 
+            </p>
+            <form class="popup-input" id="codeForm">
+                <input type="text" id="codeInput" placeholder="Your invite code" required>
+                <button type="submit"><img src="assets/icons/right.png" alt=""></button>
+            </form>
+            <h5 class="code-error">The Code is Incorrect.</h5>
+        </div>
+    </div>
+
+    <div class="popup-startups">
+        <div class="popup-overlay"></div>
+        <div class="popup-container">
+            <h2><strong> Hire </strong> Top Talent</h2>
+            <p>
+                Moonhub represents the world's best <strong>engineers, product maagers, designers, </strong> etc in their job search. Email <strong class="c-blk">hello@moonhub.xyz</strong> to learn how you can start scaling your company with top-notch talent through Moonhub.
+            </p>
+        </div>
+    </div>
+
+    <div class="popup-community">
+        <div class="popup-overlay"></div>
+        <div class="popup-container">
+            <h2>Moonhub <strong> x(Community)</strong></h2>
+            <p>
+                Get an <strong> invite code </strong> for your community! Moonhub partners with the world’s best <strong> tech forums, VCs, alumni groups, diversity initiatives, ++ </strong> to give members startup opportunities. Earn $ every time your x(Community) invite code is used to find a job on Moonhub. Email <strong class="c-blk"> hello@moonhub.xyz </strong> to learn more and get started. 
+            </p>
+        </div>
+    </div>
+    
+    <div class="popup-job">
+        <div class="popup-overlay"></div>
+        <div class="jobs-item popup-job-container">
+            <div class="jobs-item-top">
+                <div class="job-profile">
+                    <img class="profile-img job-popup-img" src="" alt="">
+                    <ul>
+                        <li class="profile-title job-popup-role"></li>
+                        <li class="profile-link"><span class="job-popup-company"> </span> <a class="job-popup-link" href="${snapshot.val().link}"> </a></li>
+                        <li><img src="assets/icons/cube.png" alt=""><span class="job-popup-stage"></span></li>
+                        <li><img src="assets/icons/location.png" alt=""> Remote: <span class="job-popup-remote"></span></li>
+                    </ul>
+                </div>
+                <a href="#" class="profile-btn">Talk to an Expert</a>
+            </div>
+            <div class="jobs-item-bottom">
+                <h4 class="job-popup-title"></h4>
+                <p class="job-popup-description">
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div data-tf-popover="Rf1Q0KRO" data-tf-button-color="#009ACB"
+    data-tf-button-text="Launch me" data-tf-iframe-props="title=Registration Form"
+    data-tf-medium="snippet" style="all:unset;"></div>
+
+
+    <button class="typeform-btn" data-tf-popup="Rf1Q0KRO" data-tf-iframe-props="title=Registration Form"
+    data-tf-medium="snippet"
+    style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#009ACB;color:#FFFFFF;
+    font-size:15px;border-radius:18px;padding:0
+    25px;font-weight:bold;height:37.5px;cursor:pointer;line-height:37.5px;text-align:center;margin:0;text-decoration:none; display: none;">Get Introduced</button>
+
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="https://embed.typeform.com/next/embed.js"></script>
+    <script src="main.js"></script>
+
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+        import { getDatabase, push, ref, set, onChildAdded, child, remove, onValue, get } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBexLtfFSG_UyYcGpowKXGX3IjQTDYy1xM",
+          authDomain: "moonhub-8040e.firebaseapp.com",
+          projectId: "moonhub-8040e",
+          storageBucket: "moonhub-8040e.appspot.com",
+          messagingSenderId: "1093017471320",
+          appId: "1:1093017471320:web:6d50c0e710cbbedfa5bd2d",
+          measurementId: "G-E6FR4KEJKZ"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const database = getDatabase();
+
+
+        var addRemote = 'Yes'
+        $('.add-choice.no .checkbox').click(function() {
+            addRemote = 'No'
+        })
+        $('.add-choice.yes .checkbox').click(function() {
+            addRemote = 'Yes'
+        })
+
+        $('.add-job-form').submit(function(e) {
+            e.preventDefault()
+
+            var company = $('#add-company').val()
+            var link = $('#add-link').val()
+            var title = $('#add-title').val()
+            var role = $('#add-role').val()
+            var location = $('#add-location').val()
+            var stage = $('#add-stage').val()
+            var sector = $('#add-sector').val()
+
+            set(push(ref(database, 'jobs')), {
+                company: company,
+                link: link,
+                title: title,
+                role: role,
+                location: location,
+                remote: addRemote,
+                stage: stage,
+                sector: sector,
+            })
+        })
+
+        onChildAdded(ref(database, 'jobs'), (snapshot) => {
+            $('.jobs-items').prepend(`
+                <div role-filter="true" stage-filter="true" sector-filter="true" location-filter="true" data-remote="${snapshot.val().remote}" class="jobs-item ${snapshot.val().roleFilter} ${snapshot.val().locationFilter} ${snapshot.val().sectorFilter} ${snapshot.val().stageFilter}">
+                    <div class="jobs-item-top">
+                        <div class="job-profile">
+                            <img class="profile-img" src="${snapshot.val().image}" alt="">
+                            <ul>
+                                <li class="profile-title">${snapshot.val().role}</li>
+                                <li class="profile-link">${snapshot.val().company} <a href="${snapshot.val().link}"> ${snapshot.val().link}</a></li>
+                                <li><img src="assets/icons/cube.png" alt=""> ${snapshot.val().stage}</li>
+                                <li><img src="assets/icons/location.png" alt=""> Remote: ${snapshot.val().remote}</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="profile-btn">Get Introduced</a>
+                    </div>
+                    <div class="jobs-item-bottom">
+                        <h4>${snapshot.val().title}</h4>
+                        <p>
+                            ${snapshot.val().description}
+                        </p>
+                    </div>
+                </div>
+            `)
+        })
+
+
+        onChildAdded(ref(database, 'jobs'), (snapshot) => {
+            if (snapshot.val().featured == 'Yes') {
+                $('.trending-container').prepend(`
+                    <div class="trending-item" style="background-image: url('${snapshot.val().image}');">
+                        <div class="exclusives-item-top">
+                            <h5>THIS JUST IN</h5>
+                            <a href="explore.html" class="light-blue tag">${snapshot.val().tag}</a>
+                        </div>
+                        <div class="exclusives-item-bottom">
+                            <div class="exclusives-item-bottom-left">
+                                <h3>${snapshot.val().role}</h3>
+                                <h6 data-link="${snapshot.val().link}">${snapshot.val().company}</h6>
+                            </div>
+                            <div class="exclusives-item-bottom-right">
+                                <ul>
+                                    <li>Remote: <span> ${snapshot.val().remote}</span></li>
+                                    <li>${snapshot.val().stage}</li>
+                                </ul>
+                                <h6>Series</h6>
+                            </div>
+                        </div>
+                        <p class="trending-title" hidden>${snapshot.val().title}</p>
+                        <p class="trending-description" hidden>${snapshot.val().description}</p>
+                    </div>
+                `)
+            } else {
+                //
+            }
+        })
+        
+
+        $(document).on('click', '.trending-item', function() {
+            var image = $(this).css('background-image').replace('url("', '').replace('")', '')
+            var role = $(this).find('.exclusives-item-bottom-left h3').text()
+            var company = $(this).find('.exclusives-item-bottom-left h6').text()
+            var link = $(this).find('.exclusives-item-bottom-left h6').attr('data-link')
+            var remote = $(this).find('.exclusives-item-bottom-right ul li:eq(0) span').text()
+            var stage = $(this).find('.exclusives-item-bottom-right ul li:eq(1)').text()
+            var title = $(this).find('.trending-title').text()
+            var description = $(this).find('.trending-description').html()
+
+            $('.job-popup-img').attr('src', image)
+            $('.job-popup-link').attr('href', link).text(link)
+            $('.job-popup-company').text(company)
+            $('.job-popup-role').text(role)
+            $('.job-popup-remote').text(remote)
+            $('.job-popup-stage').text(stage)
+            $('.job-popup-title').text(title)
+            $('.job-popup-description').html(description)
+
+            $('.popup-job, .popup-job-container').fadeIn()
+        })
+
+
+
+        $('.search-container').submit(function(e) {
+            e.preventDefault()
+            var value = $('.search-container input').val().toLowerCase();
+
+
+            $('.jobs-item').hide()
+            $('.jobs-item').each(function() {
+                if ($(this).attr('role-filter') == 'true' && $(this).attr('stage-filter') == 'true' && $(this).attr('sector-filter') == 'true' && $(this).attr('location-filter') == 'true' && $(this).text().indexOf(value) > -1) {
+                    $(this).show()
+                } else {
+
+                }
+            })
+            
+
+        })
+
+
+
+        $('#codeForm').submit(function(e) {
+            e.preventDefault()
+            if ($('#codeInput').val() !== '') {
+                var id = $('#codeInput').val()
+                onChildAdded(ref(database, 'emails'), (snapshot) => {
+                    if (snapshot.val().code == id) {
+                        $('.typeform-btn').click()
+                    } else {
+                        //
+                    }
+                })
+            } else {
+
+            }
+        })
+
+        if (localStorage.getItem('search') !== null) {
+            $('.search-container input').val(localStorage.getItem('search'))
+
+            $('.filter a').each(function() {
+                if ($(this).text() == localStorage.getItem('search')) {
+                    $(this).addClass('active')
+                } else {
+
+                }
+            })
+                
+            localStorage.clear()
+        } else {
+            //
+        }
+        
+        onValue(ref(database, 'jobs'), (snapshot) => {
+            $('.search-container').submit()
+        })
+
+    
+
+        $('.role-filters a').click(function(e) {
+            e.preventDefault()
+
+            $(this).toggleClass('active')
+            $('.jobs-item').hide()
+            
+            $('.jobs-item').attr('role-filter', 'false')
+            $('.role-filters a.active').each(function() {
+                $(`.${$(this).attr('data-filter')}`).attr('role-filter', 'true')
+            })
+
+            if ($('.role-filters a.active').length == 0) {
+                $('.jobs-item').attr('role-filter', 'true')
+            } else {
+
+            }
+        })
+
+
+        $('.stage-filters a').click(function(e) {
+            e.preventDefault()
+
+            $(this).toggleClass('active')
+            $('.jobs-item').hide()
+
+            $('.jobs-item').attr('stage-filter', 'false')
+            $('.stage-filters a.active').each(function() {
+                $(`.${$(this).attr('data-filter')}`).attr('stage-filter', 'true')
+            })
+
+            if ($('.stage-filters a.active').length == 0) {
+                $('.jobs-item').attr('stage-filter', 'true')
+            } else {
+
+            }
+        })
+
+
+        $('.sector-filters a').click(function(e) {
+            e.preventDefault()
+
+            $(this).toggleClass('active')
+            $('.jobs-item').hide()
+
+            $('.jobs-item').attr('sector-filter', 'false')
+            $('.sector-filters a.active').each(function() {
+                $(`.${$(this).attr('data-filter')}`).attr('sector-filter', 'true')
+            })
+
+            if ($('.sector-filters a.active').length == 0) {
+                $('.jobs-item').attr('sector-filter', 'true')
+            } else {
+
+            }
+        })
+
+
+        $('.location-filters a').click(function(e) {
+            e.preventDefault()
+
+            $(this).toggleClass('active')
+            $('.jobs-item').hide()
+
+            $('.jobs-item').attr('location-filter', 'false')
+            $('.location-filters a.active').each(function() {
+                $(`.${$(this).attr('data-filter')}`).attr('location-filter', 'true')
+            })
+
+            if ($('.location-filters a.active').length == 0) {
+                $('.jobs-item').attr('location-filter', 'true')
+            } else {
+
+            }
+        })
+
+
+        $('.filter a').click(function(e) {
+            e.preventDefault()
+
+            var value = $('.search-container input').val()
+
+            $('.jobs-item').hide()
+            $('.jobs-item').each(function() {
+                if ($(this).attr('role-filter') == 'true' && $(this).attr('stage-filter') == 'true' && $(this).attr('sector-filter') == 'true' && $(this).attr('location-filter') == 'true' && $(this).text().indexOf(value) > -1) {
+                    $(this).show()
+                } else {
+
+                }
+            })
+        })
+
+
+        $('.switch').click(function() {
+            var value = $('.search-container input').val()
+            if ($(this).attr('data-remote') == 'no') {
+                $('.jobs-item').hide()
+                $('.jobs-item').each(function() {
+                    if ($(this).attr('role-filter') == 'true' && $(this).attr('stage-filter') == 'true' && $(this).attr('sector-filter') == 'true' && $(this).attr('location-filter') == 'true' && $(this).attr('data-remote') == 'Yes' && $(this).text().indexOf(value) > -1) {
+                        $(this).show()
+                    } else {
+
+                    }
+                })
+                $(this).attr('data-remote', 'yes')
+            } else {
+                $('.jobs-item').hide()
+                $('.jobs-item').each(function() {
+                    if ($(this).attr('role-filter') == 'true' && $(this).attr('stage-filter') == 'true' && $(this).attr('sector-filter') == 'true' && $(this).attr('location-filter') == 'true' && $(this).attr('data-remote') == 'No' && $(this).text().indexOf(value) > -1) {
+                        $(this).show()
+                    } else {
+
+                    }
+                })
+                $(this).attr('data-remote', 'no')
+            }
+        })
+
+
+        var emails;
+        get(ref(database, 'emails')).then((snapshot) => {
+            emails = snapshot
+        })
+
+
+        $('#codeForm').submit(function(e) {
+            e.preventDefault()
+            var exist = false
+            if ($('#codeInput').val() !== '') {
+                var id = $('#codeInput').val()
+                $('.code-error').text('Checking...').fadeIn()
+
+                emails.forEach(email => {
+                    if (email.val().code == id) {
+                        exist = true
+                    } else {
+                        //
+                    }
+                });
+
+                setTimeout(() => {
+                    
+                    if (exist == false) {
+                        $('.code-error').text('Your Code is Incorrect')
+                        setTimeout(() => {
+                            $('.code-error').fadeOut()
+                        }, 2000);
+                    } else {
+                        $('.calendly-badge-content').click()
+                        $('.code-error').fadeOut()
+                    }
+
+                }, 1000);
+
+
+            } else {
+
+            }
+        })
+
+
+        $('.contact-btn').click(function(e) {
+            e.preventDefault()
+
+            $('.popup-contact').fadeIn()
+        })
+
+
+        $('#contactForm').submit(function(e) {
+            e.preventDefault()
+
+            var templateParams = {
+                name: $('#contactName').val(),
+                email: $('#contactEmail').val(),
+                message: $('#contactMessage').val()
+            };
+            
+            emailjs.send('service_ezlgjj4', 'template_bz22ss8', templateParams)
+                .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                $('#contactMsg').fadeIn()
+                setTimeout(() => {
+                    $('#contactMsg').fadeOut()
+                }, 2000);
+                }, function(error) {
+                console.log('FAILED...', error);
+                });
+
+        })
+
+
+      </script>
+</body>
+</html>

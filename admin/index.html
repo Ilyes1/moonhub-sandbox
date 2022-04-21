@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Moonhub Admin | Home</title>
+</head>
+<body>
+
+    <div class="menu-btn">
+        <img src="../assets/icons/menu.png" alt="">
+    </div>
+    
+    <div class="sidebar">
+
+        <a href="index.html" class="logo-container">
+            <img class="sidebar-logo" src="../images/logo.png" alt="">
+        </a>
+
+        <ul class="sidebar-links">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li class="auth-link"><a href="jobs.html">Jobs</a></li>
+            <li class="auth-link"><a href="emails.html">Emails</a></li>
+            <li class="auth-link"><a href="companies.html">Companies</a></li>
+            <li class="auth-link"><a href="stanford.html">Stanford</a></li>
+            <li><a href="users.html">Users</a></li>
+        </ul>
+
+    </div>
+
+    <div class="table">
+
+        <h1 class="home-table-title">Home</h1>
+        <h3 class="auth-message">Welcome</h3>
+
+        <div class="table-container">
+            <div class="auth-form-container signup-form">
+                <div class="form-links">
+                    <h2>Sign up</h2>
+                    <h3 class="form-link login-link">Login</h3>
+                </div>
+                <form class="auth-form">
+                    <div class="input">
+                        <label>First Name</label>
+                        <input id="fName" type="text">
+                    </div>
+                    <div class="input">
+                        <label>Last Name</label>
+                        <input id="lName" type="text">
+                    </div>
+                    <div class="input">
+                        <label>Email</label>
+                        <input id="signup-email" type="email">
+                    </div>
+                    <div class="input">
+                        <label>Password</label>
+                        <input id="signup-password" type="password">
+                    </div>
+                    <button type="submit">Sign up</button>
+                    <h3 class="form-message"></h3>
+                </form>
+            </div>
+            
+            <div class="auth-form-container login-form">
+                <div class="form-links">
+                    <h2>Login</h2>
+                    <h3 class="form-link signup-link">Sign up</h3>
+                </div>
+                <form class="auth-form">
+                    <div class="input">
+                        <label>Email</label>
+                        <input id="login-email" type="email">
+                    </div>
+                    <div class="input">
+                        <label>Password</label>
+                        <input id="login-password" type="password">
+                    </div>
+                    <button type="submit">Login</button>
+                    <h3 class="form-message"></h3>
+                </form>
+            </div>
+            
+            <div class="auth-form-container logout-form">
+                <button class="logout-btn">Logout</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="main.js"></script>
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+        import { getDatabase, push, ref, set, onChildAdded, child, remove } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, updateProfile, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBexLtfFSG_UyYcGpowKXGX3IjQTDYy1xM",
+          authDomain: "moonhub-8040e.firebaseapp.com",
+          projectId: "moonhub-8040e",
+          storageBucket: "moonhub-8040e.appspot.com",
+          messagingSenderId: "1093017471320",
+          appId: "1:1093017471320:web:6d50c0e710cbbedfa5bd2d",
+          measurementId: "G-E6FR4KEJKZ"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const database = getDatabase();
+        const auth = getAuth();
+
+
+
+
+        $('.login-form, .logout-form, .auth-message, .form-message, .auth-link').hide()
+
+        $('.login-link').click(function() {
+            $('.signup-form').fadeOut(300)
+            setTimeout(function() {
+                $('.login-form').fadeIn()
+            }, 300)
+        })
+        $('.signup-link').click(function() {
+            $('.login-form').fadeOut(300)
+            setTimeout(function() {
+                $('.signup-form').fadeIn()
+            }, 300)
+        })
+
+        
+
+        $('.signup-form form').submit(function(e) {
+            e.preventDefault()
+
+            var email = $('#signup-email').val()
+            var password = $('#signup-password').val()
+            var fName = $('#fName').val()
+            var lName = $('#lName').val()
+            createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+                updateProfile(user, {
+                    displayName: fName + ' ' + lName
+                }).then(() => {
+                    $('.auth-message').fadeIn().text(`Welcome ${user.displayName}`)
+                    if (user.uid == 'hhqMMQ1IkeZNHAfW2eieU8jBq173' || user.uid == '9hLoEWge6Hb58qmvE4THlReNOMu1') {
+                        $('.auth-link').fadeIn()
+                    } else {
+                        
+                    }
+                })
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                $('.form-message').text(errorMessage).fadeIn()
+                setTimeout(() => {
+                    $('.form-message').fadeOut()
+                }, 2000);
+            });
+        })
+        
+        $('.login-form form').submit(function(e) {
+            e.preventDefault()
+
+            var email = $('#login-email').val()
+            var password = $('#login-password').val()
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+                $('.auth-message').fadeIn().text(`Welcome ${user.displayName}`)
+                $('.login-form').fadeOut(300)
+                setTimeout(() => {
+                    $('.logout-form').fadeIn()
+                }, 300);
+                if (user.uid == 'hhqMMQ1IkeZNHAfW2eieU8jBq173' || user.uid == '9hLoEWge6Hb58qmvE4THlReNOMu1') {
+                    $('.auth-link').fadeIn()
+                } else {
+
+                }
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                $('.form-message').text(errorMessage).fadeIn()
+                setTimeout(() => {
+                    $('.form-message').fadeOut()
+                }, 2000);
+            });
+        })
+
+        $('.logout-btn').click(function() {
+            signOut(auth).then(() => {
+                $('.logout-form').fadeOut(300)
+                setTimeout(() => {
+                    $('.login-form').fadeIn()
+                }, 300);
+                $('.auth-message').fadeOut()
+            })
+        })
+
+
+
+        onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            const uid = user.uid;
+            const name = user.displayName
+            $('.auth-message').fadeIn().text(`Welcome ${user.displayName}`)
+            $('.login-form, .signup-form').hide()
+            $('.logout-form').show()
+
+            if (user.uid == 'hhqMMQ1IkeZNHAfW2eieU8jBq173' || user.uid == '9hLoEWge6Hb58qmvE4THlReNOMu1') {
+                $('.auth-link').fadeIn()
+            } else {
+                    
+            }
+            // ...
+        } else {
+            // User is signed out
+            // ...
+            $('.auth-link').fadeOut()
+        }
+        });
+
+
+
+        // onChildAdded(ref(database, 'emails'), (snapshot) => {
+        //     $('table tbody').prepend(`
+        //         <tr data-key="${snapshot.key}">
+        //             <td>${snapshot.val().email}</td>
+        //             <td>${snapshot.key}</a></td>
+        //             <td class="actions">
+        //                 <img class="delete-btn" src="../assets/icons/delete.png" alt="">
+        //             </td>
+        //         </tr>
+        //     `)
+        // })
+        
+        // $(document).on('click', '.delete-btn', function() {
+        //     var key = $(this).parents('tr').attr('data-key')
+
+        //     remove(child(ref(database, 'emails'), key))
+        //     $(this).parents('tr').fadeOut()
+        // })
+
+
+      </script>
+
+</body>
+</html>

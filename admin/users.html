@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Moonhub Admin | Users</title>
+</head>
+<body>
+
+    <div class="menu-btn">
+        <img src="../assets/icons/menu.png" alt="">
+    </div>
+    
+    <div class="sidebar">
+
+        <a href="index.html" class="logo-container">
+            <img class="sidebar-logo" src="../images/logo.png" alt="">
+        </a>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="emails.html">Emails</a></li>
+            <li><a href="companies.html">Companies</a></li>
+            <li><a href="stanford.html">Stanford</a></li>
+            <li><a class="active" href="users.html">Users</a></li>
+        </ul>
+
+    </div>
+
+    <div class="table">
+
+        <h1 class="table-title">Users</h1>
+
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr class="t-head">
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="popup add-opportunity">
+        <div class="popup-overlay"></div>
+        <div class="popup-form user-opportunities">
+            <div class="opp-search">
+                <input type="text" placeholder="Search">
+                <button><img src="../assets/icons/search.png" alt=""></button>
+            </div>
+            <div class="filters">
+                <ul class="filters-list">
+                    <li class="filter">
+                        <h4>Role <img src="../assets/icons/down.png" alt=""></h4>
+                        <ul class="cat-filters role-filters">
+                            <li><a data-filter="Software-Engineer" href="#"><img src="../assets/icons/check.png" alt=""> Software Engineer</a></li>
+                            <li><a data-filter="Frontend-Engineer" href="#"><img src="../assets/icons/check.png" alt="">Frontend Engineer</a></li>
+                            <li><a data-filter="Full-Stack-Engineer" href="#"><img src="../assets/icons/check.png" alt="">Full-Stack Engineer</a></li>
+                            <li><a data-filter="Blockchain-Engineer" href="#"><img src="../assets/icons/check.png" alt="">Blockchain Engineer</a></li>
+                            <li><a data-filter="Backend-Engineer" href="#"><img src="../assets/icons/check.png" alt="">Backend Engineer</a></li>
+                            <li><a data-filter="Infrastructure-Engineer" href="#"><img src="../assets/icons/check.png" alt="">Infrastructure Engineer</a></li>
+                            <li><a data-filter="Machine-Learning-Engineer" href="#"><img src="../assets/icons/check.png" alt="">Machine Learning Engineer</a></li>
+                            <li><a data-filter="Security-Engineer" href="#"><img src="../assets/icons/check.png" alt="">Security Engineer</a></li>
+                            <li><a data-filter="Data" href="#"><img src="../assets/icons/check.png" alt="">Data</a></li>
+                            <li><a data-filter="Product-Designer" href="#"><img src="../assets/icons/check.png" alt="">Designer</a></li>
+                            <li><a data-filter="Research" href="#"><img src="../assets/icons/check.png" alt="">Research</a></li>
+                            <li><a data-filter="Growth" href="#"><img src="../assets/icons/check.png" alt="">Growth</a></li>
+                            <li><a data-filter="Sales" href="#"><img src="../assets/icons/check.png" alt="">Sales</a></li>
+                            <li><a data-filter="Marketing" href="#"><img src="../assets/icons/check.png" alt="">Marketing</a></li>
+                            <li><a data-filter="Chief-of-Staff" href="#"><img src="../assets/icons/check.png" alt="">Chief of Staff</a></li>
+                            <li><a data-filter="Product-Manager" href="#"><img src="../assets/icons/check.png" alt="">Product Manager</a></li>
+                            <li><a data-filter="BizDev-Ops" href="#"><img src="../assets/icons/check.png" alt="">BizDev / Ops</a></li>
+                            <li><a data-filter="Finance" href="#"><img src="../assets/icons/check.png" alt="">Finance</a></li>
+                            <li><a data-filter="Intern" href="#"><img src="../assets/icons/check.png" alt="">Intern</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter">
+                        <h4>Company Stage <img src="../assets/icons/down.png" alt=""></h4>
+                        <ul class="cat-filters stage-filters">
+                            <li><a data-filter="Seed" href="#"><img src="../assets/icons/check.png" alt="">Seed</a></li>
+                            <li><a data-filter="Series-A" href="#"><img src="../assets/icons/check.png" alt="">Series A</a></li>
+                            <li><a data-filter="Series-B" href="#"><img src="../assets/icons/check.png" alt="">Series B</a></li>
+                            <li><a data-filter="Series-C" href="#"><img src="../assets/icons/check.png" alt="">Series C</a></li>
+                            <li><a data-filter="Series-D" href="#"><img src="../assets/icons/check.png" alt="">Series D+</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter">
+                        <h4>Sector <img src="../assets/icons/down.png" alt=""></h4>
+                        <ul class="cat-filters sector-filters">
+                            <li><a data-filter="Web3" href="#"><img src="../assets/icons/check.png" alt="">Web3</a></li>
+                            <li><a data-filter="Fintech" href="#"><img src="../assets/icons/check.png" alt="">Fintech</a></li>
+                            <li><a data-filter="AI-ML" href="#"><img src="../assets/icons/check.png" alt="">AI/ML</a></li>
+                            <li><a data-filter="Consumer" href="#"><img src="../assets/icons/check.png" alt="">Consumer</a></li>
+                            <li><a data-filter="SaaS" href="#"><img src="../assets/icons/check.png" alt="">SaaS</a></li>
+                            <li><a data-filter="Hardware" href="#"><img src="../assets/icons/check.png" alt="">Hardware</a></li>
+                            <li><a data-filter="Healthcare" href="#"><img src="../assets/icons/check.png" alt="">Healthcare</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter">
+                        <h4>Location <img src="../assets/icons/down.png" alt=""></h4>
+                        <ul class="cat-filters location-filters">
+                            <li><a data-filter="SF-Bay-Area" href="#"><img src="../assets/icons/check.png" alt="">SF Bay Area</a></li>
+                            <li><a data-filter="NYC" href="#"><img src="../assets/icons/check.png" alt="">NYC</a></li>
+                            <li><a data-filter="Miami" href="#"><img src="../assets/icons/check.png" alt="">Miami</a></li>
+                            <li><a data-filter="LA-Area" href="#"><img src="../assets/icons/check.png" alt="">LA Area</a></li>
+                            <li><a data-filter="Singapore" href="#"><img src="../assets/icons/check.png" alt="">Singapore</a></li>
+                        </ul>
+                    </li>
+                    <li class="filter-switch">
+                        <h4>Remote</h4>
+                        <input type="checkbox" hidden="hidden" id="username">
+                        <label data-remote="no" class="switch" for="username"></label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="popup view-opportunity">
+        <div class="popup-overlay"></div>
+        <div class="popup-form user-opportunities">
+        </div>
+    </div>
+
+    <div class="popup add-job-popup">
+        <div class="popup-overlay"></div>
+        <form class="popup-form add-job-form">
+            <div class="input">
+                <label>Email</label>
+                <input id="add-email" type="email">
+            </div>
+            <div class="input">
+                <label>Wallet Count</label>
+                <input id="add-wallet" type="text">
+            </div>
+            <button type="submit">Add Email</button>
+        </form>
+    </div>
+
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="main.js"></script>
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+        import { getDatabase, push, ref, set, onChildAdded, child, remove, get } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBexLtfFSG_UyYcGpowKXGX3IjQTDYy1xM",
+          authDomain: "moonhub-8040e.firebaseapp.com",
+          projectId: "moonhub-8040e",
+          storageBucket: "moonhub-8040e.appspot.com",
+          messagingSenderId: "1093017471320",
+          appId: "1:1093017471320:web:6d50c0e710cbbedfa5bd2d",
+          measurementId: "G-E6FR4KEJKZ"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const database = getDatabase();
+
+
+        onChildAdded(ref(database, 'users'), (snapshot) => {
+            $('table tbody').prepend(`
+                <tr data-key="${snapshot.key}">
+                    <td class="name">${snapshot.val().name}</td>
+                    <td class="email">${snapshot.val().email}</td>
+                    <td class="actions">
+                        <span class="opp-edit">Add Opportunity</span>
+                        <span class="opp-see">View Opportunities</span>
+                    </td>
+                    <td class="data-opps" hidden>${snapshot.val().opportunities}</td>
+                </tr>
+            `)
+        })
+
+        onChildAdded(ref(database, 'jobs'), (snapshot) => {
+            $('.add-opportunity .user-opportunities').append(`
+                <div class="user-opportunity ${snapshot.val().roleFilter} ${snapshot.val().locationFilter} ${snapshot.val().sectorFilter} ${snapshot.val().stageFilter}" data-key="${snapshot.key}" role-filter="true" stage-filter="true" sector-filter="true" location-filter="true" data-remote="${snapshot.val().remote}">
+                    <img src="${snapshot.val().image}" alt="">
+                    <div class="opp-details">
+                        <h4>${snapshot.val().role}</h4>
+                        <h5 class="opp-link"><strong>${snapshot.val().company}</strong><span> ${snapshot.val().link}</span></h5>
+                        <h5>${snapshot.val().stage}</h5>
+                        <h5>Remote: <span>${snapshot.val().remote}</span></h5>
+                        <h4 class="opp-title">${snapshot.val().title}</h4>
+                        <p hidden>${snapshot.val().description}</p>
+                    </div>
+                </div>
+            `)
+        })
+        
+        $(document).on('click', '.delete-btn', function() {
+            var key = $(this).parents('tr').attr('data-key')
+
+            remove(child(ref(database, 'emails'), key))
+            $(this).parents('tr').fadeOut()
+        })
+
+        
+
+
+        var emails;
+        get(ref(database, 'emails')).then((snapshot) => {
+            emails = snapshot
+        })
+
+
+        var seeOpps;
+        var seeKey;
+        var seeName;
+        var seeEmail;
+        $(document).on('click', '.opp-see', function() {
+
+            seeKey = $(this).parents('tr').attr('data-key')
+            seeName = $(this).parents('tr').find('.name').text()
+            seeEmail = $(this).parents('tr').find('.email').text()
+            seeOpps = JSON.parse($(this).parents('tr').find('.data-opps').text())
+
+            $('.view-opportunity .user-opportunities').html('')
+
+            seeOpps.forEach(opp => {
+                get(child(ref(database, 'jobs'), opp.opp)).then(function(snapshot) {
+                    $('.view-opportunity .user-opportunities').append(`
+                        <div class="user-opp-container" data-key="${snapshot.key}">
+                            <div class="user-view-opportunity">
+                                <img class="opp-img" src="${snapshot.val().image}" alt="">
+                                <div class="opp-details">
+                                    <h4>${snapshot.val().role}</h4>
+                                    <h5 class="opp-link"><strong>${snapshot.val().company}</strong><span> ${snapshot.val().link}</span></h5>
+                                    <h5>${snapshot.val().stage}</h5>
+                                    <h5>Remote: <span>${snapshot.val().remote}</span></h5>
+                                    <h4 class="opp-title">${snapshot.val().title}</h4>
+                                </div>
+                            </div>
+                            <div class="user-view-right">
+                                <button class="delete-opp">Delete</button> 
+                                <h4 class="user-dropdown-title">${opp.status}</h4> 
+                                <ul class="user-dropdown" hidden>
+                                    <li>Waiting for Introduction</li>
+                                    <li>Initial Meeting Scheduled</li>
+                                    <li>Interviewing</li>
+                                    <li>Paused</li>
+                                    <li>Not a Fit</li>
+                                    <li>Got an Offer</li>
+                                    <li>Turned Down Offer</li>
+                                    <li>Accepted Offer</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `)
+                })
+            })
+            
+            
+            $('.view-opportunity').fadeIn()
+            
+
+            
+        })
+        
+        $(document).on('click', '.user-dropdown-title', function() {
+            $('.user-opp-container').css('z-index', '1')
+            $(this).parents('.user-opp-container').css('z-index', '99')
+            $(this).next().slideToggle(200)
+        })
+
+        $(document).on('click', '.user-dropdown li', function() {
+            var option = $(this).text()
+            var oppKey = $(this).parents('.user-opp-container').attr('data-key')
+            var arrOpp = seeOpps.findIndex((opp => opp.opp == oppKey));
+
+            seeOpps[arrOpp].status = option
+            $(this).parents('.user-view-right').find('h4').html(option)
+            $(this).parent().slideUp(200)
+            
+            set(child(ref(database, 'users'), seeKey), {
+                email: seeEmail,
+                name: seeName,
+                opportunities: JSON.stringify(seeOpps)
+            })
+
+            $(`tr[data-key="${seeKey}"] .data-opps`).text(JSON.stringify(seeOpps))
+
+        })
+        
+
+        $(document).on('click', '.delete-opp', function() {
+            var oppKey = $(this).parents('.user-opp-container').attr('data-key')
+            seeOpps.splice(seeOpps.findIndex(el => el.opp === oppKey), 1);
+
+            set(child(ref(database, 'users'), seeKey), {
+                email: seeEmail,
+                name: seeName,
+                opportunities: JSON.stringify(seeOpps)
+            })
+
+            $(`tr[data-key="${seeKey}"] .data-opps`).text(JSON.stringify(seeOpps))
+
+            $(this).parents('.user-opp-container').fadeOut()
+        })
+        
+
+        var key;
+        var email;
+        var code;
+        var opps;
+        $(document).on('click', '.opp-edit', function() {
+            key = $(this).parents('tr').attr('data-key')
+            name = $(this).parents('tr').find('.name').text()
+            email = $(this).parents('tr').find('.email').text()
+            opps = JSON.parse($(this).parents('tr').find('.data-opps').text())
+            console.log(opps)
+            $('.add-opportunity').fadeIn()
+        })
+
+
+        $(document).on('click', '.user-opportunity', function() {
+            var opp = $(this).attr('data-key')
+            opps.push({opp: opp, status: '.'})
+            set(child(ref(database, 'users'), key), {
+                email: email,
+                name: name,
+                opportunities: JSON.stringify(opps)
+            })
+            $(this).hide()
+        })
+
+        $('.edit-wallet-form').submit(function(e) {
+            e.preventDefault()
+            var exist = false
+            $('.email-message').text('Checking Code...').fadeIn()
+
+            emails.forEach(item => {
+                if (item.val().code == $('#edit-code').val() && item.val().code !== code) {
+                    exist = true
+                } else {
+                    //
+                }
+            })
+
+            setTimeout(() => {
+                if (exist == false) {
+                    set(child(ref(database, 'emails'), key), {
+                        email: email,
+                        walletCount: $('#edit-wallet').val(),
+                        code: $('#edit-code').val()
+                    })
+                    location.reload()
+                } else {
+                    $('.email-message').text('This Code is already existing.')
+                    setTimeout(() => {
+                        $('.email-message').fadeOut()
+                    }, 2000);
+                }
+            }, 1000);
+        })
+
+        $('.add-email button').click(function() {
+            $('.add-job-popup').fadeIn()
+        })
+
+        $('.add-job-form').submit(function(e) {
+            e.preventDefault()
+
+            if ($('#add-email').val() !== '') {
+                var wallet = $('#add-wallet').val()
+                var emailKey = $('#add-email').val().replace(/@|\.|#|\$|\[|]/g,'-')
+                var id = Date.now().toString(36) + Math.random().toString(36).substr(2);
+                set(child(ref(database, 'emails'), emailKey), {
+                    email: $('#add-email').val(),
+                    code: id,
+                    walletCount: wallet
+                })
+                $('.add-job-popup').fadeOut()
+            } else {
+
+            }
+        })
+
+        $(".opp-search input").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $(".user-opportunity").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+
+        $('.role-filters a').click(function(e) {
+            e.preventDefault()
+
+            $(this).toggleClass('active')
+            $('.user-opportunity').hide()
+            
+            $('.user-opportunity').attr('role-filter', 'false')
+            $('.role-filters a.active').each(function() {
+                $(`.${$(this).attr('data-filter')}`).attr('role-filter', 'true')
+            })
+
+            if ($('.role-filters a.active').length == 0) {
+                $('.user-opportunity').attr('role-filter', 'true')
+            } else {
+
+            }
+        })
+
+
+        $('.stage-filters a').click(function(e) {
+            e.preventDefault()
+
+            $(this).toggleClass('active')
+            $('.user-opportunity').hide()
+
+            $('.user-opportunity').attr('stage-filter', 'false')
+            $('.stage-filters a.active').each(function() {
+                $(`.${$(this).attr('data-filter')}`).attr('stage-filter', 'true')
+            })
+
+            if ($('.stage-filters a.active').length == 0) {
+                $('.user-opportunity').attr('stage-filter', 'true')
+            } else {
+
+            }
+        })
+
+
+        $('.sector-filters a').click(function(e) {
+            e.preventDefault()
+
+            $(this).toggleClass('active')
+            $('.user-opportunity').hide()
+
+            $('.user-opportunity').attr('sector-filter', 'false')
+            $('.sector-filters a.active').each(function() {
+                $(`.${$(this).attr('data-filter')}`).attr('sector-filter', 'true')
+            })
+
+            if ($('.sector-filters a.active').length == 0) {
+                $('.user-opportunity').attr('sector-filter', 'true')
+            } else {
+
+            }
+        })
+
+
+        $('.location-filters a').click(function(e) {
+            e.preventDefault()
+
+            $(this).toggleClass('active')
+            $('.user-opportunity').hide()
+
+            $('.user-opportunity').attr('location-filter', 'false')
+            $('.location-filters a.active').each(function() {
+                $(`.${$(this).attr('data-filter')}`).attr('location-filter', 'true')
+            })
+
+            if ($('.location-filters a.active').length == 0) {
+                $('.user-opportunity').attr('location-filter', 'true')
+            } else {
+
+            }
+        })
+
+
+        $('.filter a').click(function(e) {
+            e.preventDefault()
+
+            var value = $('.opp-search input').val()
+
+            $('.user-opportunity').hide()
+            $('.user-opportunity').each(function() {
+                if ($(this).attr('role-filter') == 'true' && $(this).attr('stage-filter') == 'true' && $(this).attr('sector-filter') == 'true' && $(this).attr('location-filter') == 'true' && $(this).text().indexOf(value) > -1) {
+                    $(this).show()
+                } else {
+
+                }
+            })
+        })
+
+
+        $('.switch').click(function() {
+            var value = $('.opp-search input').val()
+            if ($(this).attr('data-remote') == 'no') {
+                $('.user-opportunity').hide()
+                $('.user-opportunity').each(function() {
+                    if ($(this).attr('role-filter') == 'true' && $(this).attr('stage-filter') == 'true' && $(this).attr('sector-filter') == 'true' && $(this).attr('location-filter') == 'true' && $(this).attr('data-remote') == 'Yes' && $(this).text().indexOf(value) > -1) {
+                        $(this).show()
+                    } else {
+
+                    }
+                })
+                $(this).attr('data-remote', 'yes')
+            } else {
+                $('.user-opportunity').hide()
+                $('.user-opportunity').each(function() {
+                    if ($(this).attr('role-filter') == 'true' && $(this).attr('stage-filter') == 'true' && $(this).attr('sector-filter') == 'true' && $(this).attr('location-filter') == 'true' && $(this).attr('data-remote') == 'No' && $(this).text().indexOf(value) > -1) {
+                        $(this).show()
+                    } else {
+
+                    }
+                })
+                $(this).attr('data-remote', 'no')
+            }
+        })
+
+
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+    
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                emailjs.init("Yr7bjEWQskDUBCsEc");
+            })();
+        </script>
+    
+        <title>Moonhub | Explore Jobs</title>
+    </head>
+<body class="profile-body">
+    
+
+    <nav class="explore-nav active">
+        <div class="nav-left">
+            <a href="index.html"><img src="images/logo.png" alt=""></a>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li class="saved-msg">Changes saved</li>
+                <li><a class="active" href="profile.html">Profile</a></li>
+                <li><a href="explore.html">Discover</a></li>
+                <li class="blue-navlink"><a href="index.html">Matches</a></li>
+                <li class="menu-btn"><img src="assets/icons/menu.png" alt=""></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="explore-mobile-menu active">
+        <ul>
+            <li>
+                <form class="search-container">
+                    <input type="text" class="search-input">
+                    <button type="submit" class="search-btn"><img src="assets/icons/search.png" alt=""></button>
+                </form>
+            </li>
+            <li><a href="explore.html">Discover</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li class="blue-navlink"><a href="index.html">Matches</a></li>
+        </ul>
+    </div>
+
+
+
+    <div class="profile-main">
+
+        <div class="logout-btn-container">
+            <button class="logout-btn">Logout</button>
+        </div>
+
+        <div class="profile-cover">
+            <div class="profile-page-img">
+                <img class="profile-picture" src="images/profile.png" alt="">
+                <div class="edit-btn">
+                    <img class="edit-img-btn" src="assets/icons/edit-img.png" alt="">
+                </div>
+            </div>
+
+            <div class="profile-links">
+                <div class="profile-links-top">
+                    <h3>Nancy Xu</h3>
+                    <ul>
+                        <li>
+                            <h5>Dec 2019</h5>
+                            <span>Joined</span>
+                        </li>
+                        <li>
+                            <h5>Dec 2019</h5>
+                            <span>Joined</span>
+                        </li>
+                        <li>
+                            <h5>Dec 2019</h5>
+                            <span>Joined</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="profile-links-bottom">
+                    <div class="link">
+                        <div class="link-container">
+                            <div class="link-text">www.linkedin.com/in/<span>xnancy</span></div>
+                            <form class="link-form"><input type="text" /></form>
+                            <div class="link-btn"><img src="assets/icons/pencil.png" alt=""></div>
+                        </div>
+                        <div class="link-label">LinkedIn</div>
+                    </div>
+                    <div class="link">
+                        <div class="link-container">
+                            <div class="link-text"><span>nancy@moonhub.xyz</span></div>
+                            <form class="link-form"><input type="text" /></form>
+                            <div class="link-btn"><img src="assets/icons/pencil.png" alt=""></div>
+                        </div>
+                        <div class="link-label">Email</div>
+                    </div>
+                    <div class="link">
+                        <div class="link-container">
+                            <div class="link-text">moonhub.xyz/hi/<span>xnancy</span></div>
+                            <form class="link-form"><input type="text" /></form>
+                            <div class="link-btn"><img src="assets/icons/pencil.png" alt=""></div>
+                        </div>
+                        <div class="link-label">Profile Link</div>
+                    </div>
+                    <div class="link">
+                        <div class="link-container">
+                            <div class="link-text">moonhub.xyz/inv/<span>xnancy</span></div>
+                            <form class="link-form"><input type="text" /></form>
+                            <div class="link-btn"><img src="assets/icons/pencil.png" alt=""></div>
+                        </div>
+                        <div class="link-label">Invite Link</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Hi, Moonhub members...</h2>
+
+        <textarea class="about-textarea" placeholder="Tell us what inspires you, what you’re looking for, and how you want to find it"></textarea>
+
+        <h2>Curate opportunities based on</h2>
+
+        <div class="white-container">
+
+            <div class="looking-option">
+                <span><strong>Open</strong> to Conversation </span>
+                <div>
+                    <input type="checkbox" hidden="hidden" id="conversation">
+                    <label class="switch" for="conversation"></label>
+                </div>
+            </div>
+            <div class="looking-option">
+                <span><strong>Actively Looking</strong> for New Roles </span>
+                <div>
+                    <input type="checkbox" hidden="hidden" id="role">
+                    <label class="switch" for="role"></label>
+                </div>
+            </div>
+            <div class="looking-option">
+                <span>Open to <strong> Remote Roles </strong></span>
+                <div>
+                    <input type="checkbox" hidden="hidden" id="remote">
+                    <label class="switch" for="remote"></label>
+                </div>
+            </div>
+    
+            <div class="looking-field">
+                <p>If not open to remote roles, what <strong> geographic locations </strong> do you prefer? </p>
+                <input type="text">
+            </div>
+            <div class="looking-field">
+                <p>What is your <strong> desired start date </strong> for your next role? </p>
+                <input type="text">
+            </div>
+            <div class="looking-field">
+                <p>What <strong> type of roles </strong> are you looking for? (e.g. blockchain engineer, PM, product designer, engineering manager)</p>
+                <input type="text">
+            </div>
+    
+            <div class="looking-types">
+    
+                <div class="types-left">
+                    <p>What <strong> sectors/markets </strong> are you looking for? </p>
+                    <ul class="types-list">
+                        <li data-value="SaaS"><span>A</span>SaaS</li>
+                        <li data-value="Healthcare"><span>B</span>Healthcare</li>
+                        <li data-value="Fintech"><span>C</span>Fintech</li>
+                        <li data-value="Security"><span>D</span>Security</li>
+                        <li data-value="Consumer"><span>E</span>Consumer</li>
+                        <li data-value="Susutainability"><span>F</span>Susutainability</li>
+                        <li data-value="Web3"><span>G</span>Web3</li>
+                        <li data-value="AI"><span>H</span>AI / Machine Learning</li>
+                        <li data-value="Proptech"><span>I</span>Proptech</li>
+                        <li data-value="Other"><span>J</span>Other</li>
+                    </ul>
+                </div>
+    
+                <div class="types-right">
+                </div>
+    
+            </div>
+    
+            <div class="looking-field">
+                <p><strong>Anything else? </strong> (your Moonhub agent will use this information to curate rocketships for you)</p>
+                <input type="text">
+            </div>
+        </div>
+
+    </div>
+
+    <input type="file" id="hiddenInput" hidden>
+
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="https://embed.typeform.com/next/embed.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
